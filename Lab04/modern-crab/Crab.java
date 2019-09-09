@@ -14,11 +14,13 @@ public class Crab extends Actor{
 
     public void act(){
         moveAndTurn();
-        eat();    
+        eat();
+        if (isGameWon()) {
+            transitionToGameWonWorld();
+        }
     }
     //allows the crab to turn left or right and makes it move at a speed of 3.
     public void moveAndTurn(){
-      
         move(3);
         if (Greenfoot.isKeyDown("left")) {
             turn(-3);
@@ -35,5 +37,18 @@ public class Crab extends Actor{
             world.removeObject(worm);
             Greenfoot.playSound("eating.wav");
         }
+    }
+    //checks to see if the world has worms in the world.
+    public boolean isGameWon(){
+        World world = getWorld();
+        if (world.getObjects(Worm.class).isEmpty()) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public void transitionToGameWonWorld(){
+        World gameWonWorld = new GameWonWorld();
+        Greenfoot.setWorld(gameWonWorld);
     }
 }

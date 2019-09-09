@@ -13,6 +13,7 @@ public class Lobster extends Actor{
     public void act(){
     	moveAround();
     	addLobster();
+        killCrab();
     }
     //Lets the lobster move randomly
     public void moveAround(){
@@ -24,6 +25,7 @@ public class Lobster extends Actor{
     		turn(180);
     	}
     }
+    //Adds a new Lobster to the world when eaten.
     public void addLobster(){
     	Actor worm = getOneIntersectingObject(Worm.class);
     	Actor lobster = new Lobster();
@@ -32,5 +34,11 @@ public class Lobster extends Actor{
             world.removeObject(worm);
             world.addObject(lobster,getX(),getY());
     	}
+    }
+    //Kills the crab if they hit eachother.
+    public void killCrab(){
+        if (isTouching(Crab.class)) {
+            removeTouching(Crab.class);
+        }
     }
 }
