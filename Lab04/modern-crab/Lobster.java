@@ -14,6 +14,9 @@ public class Lobster extends Actor{
     	moveAround();
     	addLobster();
         killCrab();
+        if(isGameOver()){
+            transitionToGameLostWorld();
+        }
     }
     //Lets the lobster move randomly
     public void moveAround(){
@@ -40,5 +43,18 @@ public class Lobster extends Actor{
         if (isTouching(Crab.class)) {
             removeTouching(Crab.class);
         }
+    }
+    //Checks to see if there is any crabs in the world.
+    public boolean isGameOver(){
+        World world = getWorld();
+        if (world.getObjects(Crab.class).isEmpty()) {
+            return true;
+        }else{
+            return false;
+        }    
+    }
+    public void transitionToGameLostWorld(){
+        World gameOverWorld = new GameOverWorld();
+        Greenfoot.setWorld(gameOverWorld);
     }
 }

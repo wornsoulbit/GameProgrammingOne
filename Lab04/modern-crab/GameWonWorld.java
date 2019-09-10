@@ -2,9 +2,6 @@ import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
 
-/**
- * 
- */
 public class GameWonWorld extends World
 {
 
