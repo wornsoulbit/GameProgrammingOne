@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="MazeWorld" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve">Amazing Rock, Paper, Scissors Maze
+
+@author: Nicolas Bergeron
+
+Vanier College 2019 </javadoc>
+    <imports>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <comment xml:space="preserve">(World, Actor, GreenfootImage, Greenfoot and MouseInfo)</comment>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class MazeWorld.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="12,10,75" params-java="12, 10, 75"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Wall" type-java="Wall" name="wall" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall,11,1)" expression-java="addObject(wall, 11, 1)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall2" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall2,10,1)" expression-java="addObject(wall2, 10, 1)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall3" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall3,8,0)" expression-java="addObject(wall3, 8, 0)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall4" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall4,8,1)" expression-java="addObject(wall4, 8, 1)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall5" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall5,8,2)" expression-java="addObject(wall5, 8, 2)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall6" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall6,8,3)" expression-java="addObject(wall6, 8, 3)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall7" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall7,9,3)" expression-java="addObject(wall7, 9, 3)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall8" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall8,10,3)" expression-java="addObject(wall8, 10, 3)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall9" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall9,10,4)" expression-java="addObject(wall9, 10, 4)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall10" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall10,8,5)" expression-java="addObject(wall10, 8, 5)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall11" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall11,8,6)" expression-java="addObject(wall11, 8, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall12" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall12,9,6)" expression-java="addObject(wall12, 9, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall13" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall13,10,6)" expression-java="addObject(wall13, 10, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall14" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall14,10,7)" expression-java="addObject(wall14, 10, 7)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall15" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall15,10,8)" expression-java="addObject(wall15, 10, 8)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall16" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall16,10,9)" expression-java="addObject(wall16, 10, 9)" enable="true"/>
+                <variable type="RockPlayer" type-java="RockPlayer" name="rockPlayer" value="new RockPlayer()" value-java=" new RockPlayer()" enable="true"/>
+                <call expression="addObject(rockPlayer,11,5)" expression-java="addObject(rockPlayer, 11, 5)" enable="true"/>
+                <variable type="Rock" type-java="Rock" name="rock" value="new Rock()" value-java=" new Rock()" enable="true"/>
+                <call expression="addObject(rock,8,4)" expression-java="addObject(rock, 8, 4)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors,11,0)" expression-java="addObject(scissors, 11, 0)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors2" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors2,11,9)" expression-java="addObject(scissors2, 11, 9)" enable="true"/>
+                <variable type="Paper" type-java="Paper" name="paper" value="new Paper()" value-java=" new Paper()" enable="true"/>
+                <call expression="addObject(paper,11,6)" expression-java="addObject(paper, 11, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall17" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall17,6,5)" expression-java="addObject(wall17, 6, 5)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall18" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall18,6,6)" expression-java="addObject(wall18, 6, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall19" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall19,6,7)" expression-java="addObject(wall19, 6, 7)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall20" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall20,6,8)" expression-java="addObject(wall20, 6, 8)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall21" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall21,7,8)" expression-java="addObject(wall21, 7, 8)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall22" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall22,8,8)" expression-java="addObject(wall22, 8, 8)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall23" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall23,5,8)" expression-java="addObject(wall23, 5, 8)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall24" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall24,6,3)" expression-java="addObject(wall24, 6, 3)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall25" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall25,6,2)" expression-java="addObject(wall25, 6, 2)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall26" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall26,5,2)" expression-java="addObject(wall26, 5, 2)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall27" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall27,4,2)" expression-java="addObject(wall27, 4, 2)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall28" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall28,4,1)" expression-java="addObject(wall28, 4, 1)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall29" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall29,4,0)" expression-java="addObject(wall29, 4, 0)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall30" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall30,6,1)" expression-java="addObject(wall30, 6, 1)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall31" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall31,4,8)" expression-java="addObject(wall31, 4, 8)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall32" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall32,4,9)" expression-java="addObject(wall32, 4, 9)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall33" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall33,5,5)" expression-java="addObject(wall33, 5, 5)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall34" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall34,4,5)" expression-java="addObject(wall34, 4, 5)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall35" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall35,4,4)" expression-java="addObject(wall35, 4, 4)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall36" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall36,3,4)" expression-java="addObject(wall36, 3, 4)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall37" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall37,2,4)" expression-java="addObject(wall37, 2, 4)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall38" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall38,2,3)" expression-java="addObject(wall38, 2, 3)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall39" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall39,2,2)" expression-java="addObject(wall39, 2, 2)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall40" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall40,2,1)" expression-java="addObject(wall40, 2, 1)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall41" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall41,1,1)" expression-java="addObject(wall41, 1, 1)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall42" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall42,0,3)" expression-java="addObject(wall42, 0, 3)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall43" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall43,0,4)" expression-java="addObject(wall43, 0, 4)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall44" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall44,0,5)" expression-java="addObject(wall44, 0, 5)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall45" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall45,0,6)" expression-java="addObject(wall45, 0, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall46" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall46,1,6)" expression-java="addObject(wall46, 1, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall47" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall47,2,6)" expression-java="addObject(wall47, 2, 6)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall48" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall48,2,7)" expression-java="addObject(wall48, 2, 7)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall49" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall49,2,8)" expression-java="addObject(wall49, 2, 8)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall50" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall50,1,8)" expression-java="addObject(wall50, 1, 8)" enable="true"/>
+                <variable type="Goal" type-java="Goal" name="goal" value="new Goal()" value-java=" new Goal()" enable="true"/>
+                <call expression="addObject(goal,1,7)" expression-java="addObject(goal, 1, 7)" enable="true"/>
+                <variable type="Rock" type-java="Rock" name="rock2" value="new Rock()" value-java=" new Rock()" enable="true"/>
+                <call expression="addObject(rock2,6,4)" expression-java="addObject(rock2, 6, 4)" enable="true"/>
+                <variable type="Paper" type-java="Paper" name="paper2" value="new Paper()" value-java=" new Paper()" enable="true"/>
+                <call expression="addObject(paper2,5,4)" expression-java="addObject(paper2, 5, 4)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors3" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors3,5,1)" expression-java="addObject(scissors3, 5, 1)" enable="true"/>
+                <variable type="Paper" type-java="Paper" name="paper3" value="new Paper()" value-java=" new Paper()" enable="true"/>
+                <call expression="addObject(paper3,5,3)" expression-java="addObject(paper3, 5, 3)" enable="true"/>
+                <variable type="Rock" type-java="Rock" name="rock3" value="new Rock()" value-java=" new Rock()" enable="true"/>
+                <call expression="addObject(rock3,5,9)" expression-java="addObject(rock3, 5, 9)" enable="true"/>
+                <variable type="Paper" type-java="Paper" name="paper4" value="new Paper()" value-java=" new Paper()" enable="true"/>
+                <call expression="addObject(paper4,7,7)" expression-java="addObject(paper4, 7, 7)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors4" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors4,9,8)" expression-java="addObject(scissors4, 9, 8)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors5" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors5,4,3)" expression-java="addObject(scissors5, 4, 3)" enable="true"/>
+                <variable type="Rock" type-java="Rock" name="rock4" value="new Rock()" value-java=" new Rock()" enable="true"/>
+                <call expression="addObject(rock4,5,6)" expression-java="addObject(rock4, 5, 6)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors6" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors6,5,7)" expression-java="addObject(scissors6, 5, 7)" enable="true"/>
+                <variable type="Rock" type-java="Rock" name="rock5" value="new Rock()" value-java=" new Rock()" enable="true"/>
+                <call expression="addObject(rock5,0,7)" expression-java="addObject(rock5, 0, 7)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors7" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors7,0,8)" expression-java="addObject(scissors7, 0, 8)" enable="true"/>
+                <variable type="Paper" type-java="Paper" name="paper5" value="new Paper()" value-java=" new Paper()" enable="true"/>
+                <call expression="addObject(paper5,0,9)" expression-java="addObject(paper5, 0, 9)" enable="true"/>
+                <variable type="Rock" type-java="Rock" name="rock6" value="new Rock()" value-java=" new Rock()" enable="true"/>
+                <call expression="addObject(rock6,5,0)" expression-java="addObject(rock6, 5, 0)" enable="true"/>
+                <call expression="removeObject(rock6)" expression-java="removeObject(rock6)" enable="true"/>
+                <call expression="removeObject(scissors3)" expression-java="removeObject(scissors3)" enable="true"/>
+                <variable type="Rock" type-java="Rock" name="rock7" value="new Rock()" value-java=" new Rock()" enable="true"/>
+                <call expression="addObject(rock7,5,1)" expression-java="addObject(rock7, 5, 1)" enable="true"/>
+                <variable type="Scissors" type-java="Scissors" name="scissors9" value="new Scissors()" value-java=" new Scissors()" enable="true"/>
+                <call expression="addObject(scissors9,5,0)" expression-java="addObject(scissors9, 5, 0)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>
