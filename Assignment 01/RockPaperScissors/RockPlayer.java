@@ -27,6 +27,5 @@ public class RockPlayer extends Player {
             world.removeObject(scissor);
             Greenfoot.playSound("crush.wav");
     	}
-
     }
 }

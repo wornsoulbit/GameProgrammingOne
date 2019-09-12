@@ -15,6 +15,16 @@ public class Paper extends Actor {
      * Act - do whatever the Paper wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+    	killRock();
+    }
 
+    public void killRock(){
+        Actor rock = getOneIntersectingObject(Rock.class);
+        if(rock != null){
+            World world = getWorld();
+            Player paperPlayer = new PaperPlayer();
+            world.removeObject(rock);
+            world.addObject(paperPlayer, getX(), getY());
+        }
     }
 }
