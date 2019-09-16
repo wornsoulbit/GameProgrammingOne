@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -28,8 +27,10 @@ public class Goal extends Actor
     {
         Actor player = getOneIntersectingObject(Player.class);
         if (player != null) {
+            World wonWorld = new WonWorld();
             getWorld().removeObject(player);
             Greenfoot.playSound("goal.wav");
+            Greenfoot.setWorld(wonWorld);
         }
     }
 }

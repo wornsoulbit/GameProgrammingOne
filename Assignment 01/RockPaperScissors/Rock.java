@@ -19,14 +19,14 @@ public class Rock extends Actor {
     }
 
     public void removeScissor(){
-
-        Actor scissor = getOneIntersectingObject(Scissors.class);
-
+        
+        Actor scissor = getOneIntersectingObject(ScissorsPlayer.class);
+        World world = getWorld();
+        
         if(scissor != null){
-            World world = getWorld();
-            Player rockPlayer = new RockPlayer();
-            world.removeObject(scissor);
-            world.addObject(rockPlayer, getX(), getY());
+          Player rockPlayer = new RockPlayer();
+          world.removeObject(scissor);
+          world.addObject(rockPlayer, getX(), getY());
         }
     }
 }

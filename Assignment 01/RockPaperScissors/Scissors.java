@@ -24,8 +24,8 @@ public class Scissors extends Actor {
         World world = getWorld();
 
         if(paper != null){
-            world.removeObject(paper);
             Player scissorPlayer = new ScissorsPlayer();
+            world.removeObject(paper);
             world.addObject(scissorPlayer, getX(), getY());
         }
     }

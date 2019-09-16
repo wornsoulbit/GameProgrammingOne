@@ -20,7 +20,6 @@ public class ScissorsPlayer extends Player {
     }
 
     public void cutPaper() {
-
         Actor paper = getOneIntersectingObject(Paper.class);
         Actor scissor = getOneIntersectingObject(Scissors.class);
 

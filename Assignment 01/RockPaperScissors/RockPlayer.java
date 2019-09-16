@@ -19,7 +19,6 @@ public class RockPlayer extends Player {
         moveAround();
     }
 
-    //Crushes scissor if a rock intersects one.
     public void crushScissor() {
         Actor rock = getOneIntersectingObject(Rock.class);
     	Actor scissor = getOneIntersectingObject(Scissors.class);
