@@ -21,11 +21,16 @@ public class RockPlayer extends Player {
 
     //Crushes scissor if a rock intersects one.
     public void crushScissor() {
+        Actor rock = getOneIntersectingObject(Rock.class);
     	Actor scissor = getOneIntersectingObject(Scissors.class);
+        World world = getWorld();
+
     	if (scissor != null) {
-    		World world = getWorld();
             world.removeObject(scissor);
             Greenfoot.playSound("crush.wav");
     	}
+        if (RockPlayer.class != null) {
+            world.removeObject(rock);
+        }
     }
 }

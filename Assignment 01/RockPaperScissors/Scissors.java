@@ -15,15 +15,18 @@ public class Scissors extends Actor {
      * Act - do whatever the Scissors wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-    	killPaper();
+    	removePaper();
     }
 
-    public void killPaper(){
-        Actor paper = getOneIntersectingObject(Paper.class);
+    public void removePaper(){
+        
+        Actor paper = getOneIntersectingObject(PaperPlayer.class);
+        World world = getWorld();
+
         if(paper != null){
-            World world = getWorld();
             world.removeObject(paper);
-            world.addObject(Paper, getX(), getY());
+            Player scissorPlayer = new ScissorsPlayer();
+            world.addObject(scissorPlayer, getX(), getY());
         }
     }
 }

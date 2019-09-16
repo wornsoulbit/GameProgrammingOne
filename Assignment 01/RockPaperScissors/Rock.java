@@ -15,15 +15,18 @@ public class Rock extends Actor {
      * Act - do whatever the Rock wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-    	killScissor();
+        removeScissor();
     }
 
-    public void killScissor(){
+    public void removeScissor(){
+
         Actor scissor = getOneIntersectingObject(Scissors.class);
+
         if(scissor != null){
             World world = getWorld();
+            Player rockPlayer = new RockPlayer();
             world.removeObject(scissor);
-            world.addObject(Rock, getX(), getY());
+            world.addObject(rockPlayer, getX(), getY());
         }
     }
 }
