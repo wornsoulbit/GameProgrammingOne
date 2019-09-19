@@ -16,18 +16,7 @@ public class Goal extends Actor
      * Act - do whatever the Goal wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() { 
-        if (isWorldEmpty()) {
-            detectVictory();
-        }        
-    }
-    
-    public boolean isWorldEmpty() {
-        World world = getWorld();
-        if (world.getObjects(Paper.class).isEmpty() && world.getObjects(Rock.class).isEmpty() && world.getObjects(Scissors.class).isEmpty()) {
-            return true;
-        }else{
-            return false;
-        }
+        detectVictory();      
     }
     public void detectVictory()
     {
