@@ -15,7 +15,10 @@ public class StartScreen extends World
         super(12, 10, 75);
         drawText("Amazing Rock, Paper, Scissors Maze!", 250, 50);
         drawText("To start press space!", 350, 700);
-        ifSpaceBarIsPressed();
+        if (Greenfoot.isKeyDown("x")) {
+            World mazeWorld = new MazeWorld();
+            Greenfoot.setWorld(mazeWorld);
+        }
     }
     public void drawText(String message, int x, int y){
         GreenfootImage bg = getBackground();
@@ -23,10 +26,5 @@ public class StartScreen extends World
         bg.setFont(font);
         bg.setColor(Color.BLACK);
         bg.drawString(message, x, y);
-    }
-    public void ifSpaceBarIsPressed() {
-        if (Greenfoot.isKeyDown("space")){
-
-        }
     }
 }
