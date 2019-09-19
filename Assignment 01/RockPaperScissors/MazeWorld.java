@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import greenfoot.*;
 
@@ -175,5 +174,8 @@ public class MazeWorld extends World
         addObject(rock7, 5, 1);
         Scissors scissors9 =  new  Scissors();
         addObject(scissors9, 5, 0);
+        removeObject(goal);
+        InactiveGoal inactiveGoal =  new  InactiveGoal();
+        addObject(inactiveGoal, 1, 7);
     }
 }
